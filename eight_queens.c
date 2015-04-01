@@ -6,15 +6,28 @@ void printBoard(int *sol,int size)
 {
 	int x,y,i;
 	int dim=size>9 ? 2 : 1;
+	printf("%*s",dim+1," ");
+	for (i=0;i<size*(dim+1)+1;i++) {
+		printf("-");
+	}
+	printf("\n");
 	printf("%*s|",dim+1," ");
 	for (x=1;x<=size;x++) {
 		printf("%*d|",dim,x);
+	}
+	printf("\n");
+	for (i=0;i<(size+1)*(dim+1)+1;i++) {
+		printf("-");
 	}
 	printf("\n");
 	for (y=0;y<size;y++) {
 		printf("|%*d|",dim,y+1);
 		for (x=0;x<size;x++) {
 			printf("%*s|",dim,sol[y]==x ? "*" : "-");
+		}
+		printf("\n");
+		for (i=0;i<(size+1)*(dim+1)+1;i++) {
+			printf("-");
 		}
 		printf("\n");
 	}
